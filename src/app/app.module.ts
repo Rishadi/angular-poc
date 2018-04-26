@@ -4,13 +4,15 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContentComponent } from './content/content.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
