@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
+import { BooksComponent } from './books/books.component';
+import { FormsModule } from '@angular/forms'
 
 
 @NgModule({
@@ -12,10 +14,12 @@ import { ContentComponent } from './content/content.component';
     AppComponent,
     NavComponent,
     FooterComponent,
-    ContentComponent
+    ContentComponent,
+    BooksComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     MDBBootstrapModule.forRoot()
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
