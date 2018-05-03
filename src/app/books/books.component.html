@@ -1,9 +1,6 @@
 <h5>Book Store</h5>
-<div><span>ID: </span>{{book.id}}</div>
-<div><span>Name: </span>{{book.name}}</div>
-<div><span>Author: </span>{{book.author}}</div>
-<div>
-  <label>Name:
-    <input [(ngModel)]="book.name" placeholder="name">
-  </label>
-</div>
+<ul class="books">
+  <li *ngFor="let book of books" (click)="onSelect(book)">
+    <span class="badge">{{book.id}}</span> <span>{{book.name}}</span> by <span>{{book.author}}</span>
+  </li>
+</ul>
