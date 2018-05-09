@@ -6,7 +6,8 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { BooksComponent } from './books/books.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { BookDetailComponent } from './book-detail/book-detail.component'
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms'
     NavComponent,
     FooterComponent,
     ContentComponent,
-    BooksComponent
+    BooksComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
