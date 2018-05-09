@@ -4,25 +4,14 @@
           <div class="col-sm-8" style="background-color:white">
             <h5>Book Store</h5>
             <ul class="books">
-              <li *ngFor="let book of books" (click)="onSelect(book)">
+              <li *ngFor="let book of books" [class.selected]="book === selectBook" (click)="onSelect(book)">
                 <span class="badge">{{book.id}}</span> <span>{{book.name}}</span>
               </li>
             </ul>
           </div>
           <div class="col-sm-4" style="background-color:white">
-            <div *ngIf="selectedBook">
-              <h2>{{ selectedBook.name | uppercase }} Details</h2>
-              <div><span>Id: </span>{{selectedBook.id}}</div>
-              <div>
-                <label>Name:
-                  <input [(ngModel)]="selectedBook.name" placeholder="name">
-                </label>
-                <label>Author:
-                  <input [(ngModel)]="selectedBook.author" placeholder="author">
-                </label>
-              </div>
+            <app-book-detail [book]="selectedBook"></app-book-detail>
           </div>
       </div>
   </div>
 </div>
-            
