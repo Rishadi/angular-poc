@@ -8,6 +8,9 @@ import { ContentComponent } from './content/content.component';
 import { BooksComponent } from './books/books.component';
 import { FormsModule } from '@angular/forms';
 import { BookDetailComponent } from './book-detail/book-detail.component'
+import { BookService } from './book.service';
+import { MessagesComponent } from './messages/messages.component';
+import { MessageService } from './message.service';
 
 
 @NgModule({
@@ -17,7 +20,8 @@ import { BookDetailComponent } from './book-detail/book-detail.component'
     FooterComponent,
     ContentComponent,
     BooksComponent,
-    BookDetailComponent
+    BookDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,10 @@ import { BookDetailComponent } from './book-detail/book-detail.component'
     MDBBootstrapModule.forRoot()
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  providers: [
+    BookService,
+    MessageService,
+  ],
   bootstrap: [AppComponent]
   })
 export class AppModule { }

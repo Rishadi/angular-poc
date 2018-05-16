@@ -10,5 +10,5 @@ export const BOOKS: Book[] = [
   { id: 7, name: 'Ka', author: 'John Crowley'},
   { id: 8, name: 'Dinner at the Center of the Earth', author: 'Nathan Englander'},
   { id: 9, name: 'The Leavers', author: 'Lisa Ko'},
-  { id: 10, name: 'Her Body and Other Parties', author: 'Carmen Maria Machado'}
+  { id: 10, name: 'Her Body', author: 'Carmen Maria Machado'}
 ];
