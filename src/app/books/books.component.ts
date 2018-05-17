@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Book} from '../book';
-
 import { BookService } from '../book.service';
 
 
@@ -10,9 +9,7 @@ import { BookService } from '../book.service';
   styleUrls: ['./books.component.css']
 })
 
-export class BooksComponent implements OnInit {
-
-  selectedBook: Book;  
+export class BooksComponent implements OnInit { 
   books : Book[];
 
   constructor(private bookService: BookService) { }
@@ -21,9 +18,6 @@ export class BooksComponent implements OnInit {
     this.getBooks();
   }
  
-  onSelect(book: Book): void {
-    this.selectedBook = book;
-  }
   getBooks(): void {
     this.bookService.getBooks().subscribe(books => this.books = books);
   }

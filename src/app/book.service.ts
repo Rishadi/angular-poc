@@ -8,11 +8,19 @@ import { MessageService } from './message.service';
 @Injectable()
 
 export class BookService {
+  
   constructor(private messageService: MessageService) { }
+  
   getBooks(): Observable<Book[]> {
-    // TODO: send the message _after_ fetching the books
+    // TODO: send the message _after_ fetching the Books
     this.messageService.add('BookService: fetched books');
     return of(BOOKS);
+  }
+
+  getBook(id: number): Observable<Book> {
+    // TODO: send the message _after_ fetching the books
+    this.messageService.add('BookService: fetched book id=${id}');
+    return of(BOOKS.find(book => book.id === id));
   }
 }
   
