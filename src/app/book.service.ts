@@ -2,19 +2,26 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { Book} from './book';
-import { BOOKS } from './mock-books';
+import { BOOKS} from './mock-books';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MessageService } from './message.service';
 
 @Injectable()
 
 export class BookService {
+  private booksUrl = 'api/books';
+
+    constructor(
+    private http: HttpClient,
+    private messageService: MessageService) { }
   
-  constructor(private messageService: MessageService) { }
-  
+    private log(message: string) {
+      this.messageService.add('BookService: ' + message);
+    }
+ 
   getBooks(): Observable<Book[]> {
     // TODO: send the message _after_ fetching the Books
-    this.messageService.add('BookService: fetched books');
-    return of(BOOKS);
+    return this.http.get<Book[]>(this.booksUrl)
   }
 
   getBook(id: number): Observable<Book> {
