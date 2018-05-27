@@ -42,9 +42,11 @@ export class BookService {
   }
   getBook(id: number): Observable<Book> {
     // TODO: send the message _after_ fetching the books
-    this.messageService.add('BookService: fetched book id=${id}');
-    return of(BOOKS.find(book => book.id === id));
+  
+    const url = `${this.booksUrl}/${id}`;
+    return this.http.get<Book>(url).pipe(
+      tap(_ => this.log(`fetched book id=${id}`)),
+      catchError(this.handleError<Book>(`getBok id=${id}`))
+    );
   }
 }
-  
-
