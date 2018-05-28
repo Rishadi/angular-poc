@@ -7,11 +7,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MessageService } from './message.service';
 import { catchError, map, tap } from 'rxjs/operators';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable()
 
 export class BookService {
   private booksUrl = 'api/books';
-
+  
     constructor(
     private http: HttpClient,
     private messageService: MessageService) { }
@@ -49,4 +53,11 @@ export class BookService {
       catchError(this.handleError<Book>(`getBok id=${id}`))
     );
   }
+  /** PUT: update the book on the server */
+updateBook (book: Book): Observable<any> {
+  return this.http.put(this.booksUrl, book, httpOptions).pipe(
+    tap(_ => this.log(`updated book id=${book.id}`)),
+    catchError(this.handleError<any>('updateBook'))
+  );
+}
 }
