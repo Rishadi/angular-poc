@@ -60,4 +60,31 @@ updateBook (book: Book): Observable<any> {
     catchError(this.handleError<any>('updateBook'))
   );
 }
+/** POST: add a new book to the server */
+addBook (book: Book): Observable<Book> {
+  return this.http.post<Book>(this.booksUrl, book, httpOptions).pipe(
+    tap((book: Book) => this.log(`added book w/ id=${book.id}`)),
+    catchError(this.handleError<Book>('addBook'))
+  );
+}
+/** DELETE: delete the book from the server */
+deleteBook (book: Book | number): Observable<Book> {
+  const id = typeof book === 'number' ? book : book.id;
+  const url = `${this.booksUrl}/${id}`;
+
+  return this.http.delete<Book>(url, httpOptions).pipe(
+    tap(_ => this.log(`deleted book id=${id}`)),
+    catchError(this.handleError<Book>('deleteBook'))
+  );
+}
+searchBooks(term: string): Observable<Book[]> {
+  if (!term.trim()) {
+    // if not search term, return empty book array.
+    return of([]);
+  }
+  return this.http.get<Book[]>(`${this.booksUrl}/?name=${term}`).pipe(
+    tap(_ => this.log(`found books matching "${term}"`)),
+    catchError(this.handleError<Book[]>('searchBooks', []))
+  );
+}
 }
