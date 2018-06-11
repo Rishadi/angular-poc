@@ -2,17 +2,17 @@
 @import'./mixins';
 
 h1 {
-  color: $font-color;
+  color: $blue1;
   font-size: 250%;
-  }
+}
 h2, h3 {
-  color: #fff;
+  color: $red1;
   font-weight: lighter;
-  }
+}
 input[text], button {
-  color: #888;
-  }
-body{
+  color: $grey1;
+}
+body {
   background: $bg-color;
   font: $font-family;
-  }
+}

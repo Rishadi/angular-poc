@@ -1,16 +1,17 @@
 @import '~scss/vars';
 @import '~scss/styles';
 
-header{
-    background: url('../assets/images/books.png');
+header {
+    background: url('../assets/images/header-bg.jpg');
     max-width: 100%;
-    height: auto;
+    margin-top: 60px;
+    height: 150px;
 }
 .details{
-    background-color: pink;
-  }
-  .dashboard{
-    background-color: gray;
+    background-color: $red1;
+}
+.dashboard{
+    background-color: $grey1;
     margin-top: 30px;
     height: 100%;
-  }
+}
