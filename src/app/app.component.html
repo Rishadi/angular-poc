@@ -1,9 +1,30 @@
-<app-nav></app-nav>
-<app-content></app-content>
-<nav>
-    <a routerLink="/dashboard">Dashboard</a>
-    <a routerLink="/books">Books</a>
-  </nav>
-<router-outlet></router-outlet>
-<app-messages></app-messages>
-<app-footer></app-footer>
+
+  <div class="container">
+    <app-nav></app-nav>
+  </div>
+
+  <header>
+    <p>dsdsd</p>
+  </header>
+  
+  <div class="container-fluid">
+      <div class="dashboard">
+          <nav>
+            <h3><a routerLink="/dashboard">Dashboard</a>
+            <a routerLink="/books">Books</a></h3>
+          </nav>
+          <app-book-search></app-book-search>
+          <router-outlet></router-outlet>
+          <app-messages></app-messages>
+      </div>
+  </div>
+  <div class="container-fluid">
+    <div class="details">
+          <app-content></app-content>
+      </div>
+  </div>
+
+  <div class="container-fluid" style="background-color:black;">
+    <app-footer>vbhbhhhghghg</app-footer>
+  </div>
+
