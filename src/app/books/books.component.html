@@ -1,16 +1,16 @@
 
-            <label>Book name:
-              <input #bookName />
-            </label>
-            <button (click)="add(bookName.value); bookName.value=''">
-              add
-            </button>
-            <ul class="books">
-              <li *ngFor="let book of books">
-                <a routerLink="/detail/{{book.id}}">
-                  <span class="badge">{{book.id}}</span> {{book.name}}
-                </a>
-                <button class="delete" title="delete book" (click)="delete(book)">x</button>
-              </li>
-            </ul>
+<label>Book name:
+  <input #bookName />
+</label>
+<button (click)="add(bookName.value); bookName.value=''">
+  add
+</button>
+<ul class="books">
+  <li *ngFor="let book of books">
+    <a routerLink="/detail/{{book.id}}">
+      <span class="badge">{{book.id}}</span> {{book.name}}
+    </a>
+    <button class="delete" title="delete book" (click)="delete(book)">Delete</button>
+  </li>
+</ul>
         

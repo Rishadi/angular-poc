@@ -1,30 +1,30 @@
-
+<div class="container_body">
   <div class="container">
     <app-nav></app-nav>
   </div>
-
-  <header>
-    <p>Header</p>
-  </header>
-  
-  <div class="container-fluid">
-      <div class="dashboard">
+ 
+  <div class="dashboard">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="dashboard">
           <nav>
             <h3><a routerLink="/dashboard">Dashboard</a>
             <a routerLink="/books">Books</a></h3>
           </nav>
-          <app-book-search></app-book-search>
+            
           <router-outlet></router-outlet>
-          <app-messages></app-messages>
+        </div>
       </div>
+    </div>
   </div>
+
   <div class="container-fluid">
     <div class="details">
-          <app-content></app-content>
-      </div>
+        <app-content></app-content>
+    </div>
   </div>
-
-  <div class="container-fluid" style="background-color:black;">
-    <app-footer>vbhbhhhghghg</app-footer>
+  
+  <div class="container-fluid">
+    <app-footer></app-footer>
   </div>
-
+</div>

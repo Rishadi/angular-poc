@@ -1,0 +1,22 @@
+@import '~scss/vars';
+@import '~scss/styles';
+.footer{
+    background-color:$bg-color;
+    opacity: 0.7;
+    margin-left:-20px;
+    margin-right:-20px;
+    padding: 10px 0;
+}
+  .footer a {
+    color: $grey2;
+    font-size: 20px;
+    padding: 10px;
+    border-right: 1px solid $grey2;
+    transition: all .5s ease;
+  }
+  .footer a:first-child {
+    border-left: 1px solid $grey2;
+  }
+  .footer a:hover {
+    color: $blue2;
+  }

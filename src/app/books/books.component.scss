@@ -1,48 +1,52 @@
-/* BooksComponent's private CSS styles */
+@import '~scss/vars';
+@import '~scss/styles';
+
+label{
+  color: $white;
+}
 .selected {
-  background-color: #CFD8DC !important;
-  color: white;
+ 
+  color: $white;
 }
 .books {
-  margin: 0 0 2em 0;
+  margin: 0 0 10px 0;
   list-style-type: none;
-  padding: 0;
-  width: 15em;
+  width: 400px;
 }
 .books li {
   cursor: pointer;
   position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
-  height: 1.6em;
+  background-color: $li_bg;
+  margin: 5px;
+  padding: 5px 0;
+  height: 30px;
   border-radius: 4px;
 }
 .books li.selected:hover {
-  background-color: #BBD8DC !important;
-  color: white;
+  background-color:$blue3;
+  color: $white;
 }
 .books li:hover {
-  color: #607D8B;
-  background-color:#DDD;
-  left: .1em;
+  background-color:$white2;
 }
 .books .text {
   position: relative;
-  top: -3px;
 }
 .books .badge {
     display: inline-block;
     font-size: small;
-    color: white;
-    padding: 0.8em 0.7em 0 0.7em;
-    background-color: #607D8B;
-    line-height: 1em;
+    color: $white;
+    padding: 13px 12px 0 12px;
+    background-color:$badge;
+    width:30px;
     position: relative;
     left: -1px;
     top: -4px;
-    height: 1.8em;
-    margin-right: .8em;
+    height: 30px;
     border-radius: 4px 0 0 4px;
+}
+.delete{
+width: 50px;
+height: 20px;;
+font-size: smaller;
 }
